@@ -4,23 +4,30 @@ Created on Sun Nov 19 12:14:57 2017
 
 @author: LeBonAT430
 """
-#import keras
+import keras
 import csv
 from keras.models import Sequential
 from keras.layers import Dense, Activation
 from keras.optimizers import TFOptimizer
+import numpy as np
 
 coinarray=[]
 
-with open('bitcoin3.csv', newline='') as coinfile:
+with open('.bitbayUSD.csv', newline='') as coinfile:
     coinreader=csv.reader(coinfile, delimiter='\t', quotechar='|')
     for row in coinreader:
         coinarray.append(','.join(row))
 
 coinsize=len(coinarray)
+coinpy=np.array(coinarray)
+print(coinsize)
+print(coinpy)
+
 
         
-(x_train, y_train), (x_test, y_test) = #data input here training data will be tweets(x) and the labels are the previous price(y). 
+(x_train, y_train)=(#textsentiments here ,coinarray)
+
+(x_test, y_test) = #data input here training data will be tweets(x) and the labels are the previous price(y). 
 #possibly need to pre-process data depending on formatting also consider time shifts
 
 linear_model_keras = Sequential()
